@@ -1,29 +1,53 @@
-Employee Management System (EMS)
+<h1 align="center">Employee Management System (EMS)</h1>
 
-A full-stack CRUD application built with Spring Boot and React.
-This project demonstrates clean architecture, RESTful API design, and a responsive frontend.
+<p align="center">
+A full-stack CRUD application built with Spring Boot and React.<br/>
+Demonstrates clean architecture, RESTful API design, and a responsive frontend.
+</p>
 
- Features
-Create, view, and delete employee records
-Real-time UI updates using React state
-Structured error handling on the backend
-Responsive UI with Tailwind CSS
-🛠 Tech Stack
+<hr/>
 
-Backend
+<h2>Overview</h2>
+<p>
+The Employee Management System allows users to manage employee records through a simple interface.
+It showcases integration between a Spring Boot backend and a React frontend.
+</p>
 
-Spring Boot
-Java 17+
-Spring Data JPA
-MySQL
+<h2 align="center">Application Preview</h2>
 
-Frontend
+<p align="center">
+  <img src="frontend/public/screenshot.png" alt="App Screenshot" width="800"/>
+</p>
 
-React (Vite)
-Tailwind CSS v4
-PostCSS
-Fetch API
- Project Structure
+<h2>Features</h2>
+<ul>
+  <li>Create, view, and delete employee records</li>
+  <li>Real-time UI updates using React state</li>
+  <li>Structured backend error handling</li>
+  <li>Responsive UI with Tailwind CSS</li>
+</ul>
+
+<h2>Tech Stack</h2>
+
+<h3>Backend</h3>
+<ul>
+  <li>Spring Boot</li>
+  <li>Java 17+</li>
+  <li>Spring Data JPA</li>
+  <li>MySQL</li>
+</ul>
+
+<h3>Frontend</h3>
+<ul>
+  <li>React (Vite)</li>
+  <li>Tailwind CSS v4</li>
+  <li>PostCSS</li>
+  <li>Fetch API</li>
+</ul>
+
+<h2>Project Structure</h2>
+
+<pre>
 assessment-project/
 
 backend/
@@ -52,40 +76,53 @@ frontend/
   package.json
 
 README.md
-⚙️ Setup
-1. Database
-CREATE DATABASE assessment_db;
+</pre>
 
-Update credentials in:
+<h2>Setup</h2>
 
-backend/src/main/resources/application.properties
-2. Backend
-cd backend
-./mvnw spring-boot:run
+<h3>Database</h3>
+<pre><code>CREATE DATABASE assessment_db;</code></pre>
 
-Runs on:
-http://localhost:8080
+<p>Update credentials in:</p>
+<pre><code>backend/src/main/resources/application.properties</code></pre>
 
-3. Frontend
-cd frontend
+<h3>Run Backend</h3>
+<pre><code>cd backend
+./mvnw spring-boot:run</code></pre>
+
+<p>Runs on: http://localhost:8080</p>
+
+<h3>Run Frontend</h3>
+<pre><code>cd frontend
 npm install
-npm run dev
+npm run dev</code></pre>
 
-Runs on:
-http://localhost:5173
+<p>Runs on: http://localhost:5173</p>
 
-🔗 API
-Method	Endpoint	Description
-GET	/api/employees	Get all employees
-POST	/api/employees	Create employee
-DELETE	/api/employees/{id}	Delete employee
+<h2>API Endpoints</h2>
 
- Improvements
-Add update functionality (PUT/PATCH)
-Add authentication (JWT)
-Implement search & pagination
-Deploy (Render / Vercel)
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Endpoint</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>/api/employees</td>
+    <td>Retrieve all employees</td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>/api/employees</td>
+    <td>Create a new employee</td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td>/api/employees/{id}</td>
+    <td>Delete an employee</td>
+  </tr>
+</table>
 
-👤 Author
-
-Neriah Nn
+<h2>Author</h2>
+<p>Neriah Nn</p>

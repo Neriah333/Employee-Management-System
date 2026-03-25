@@ -1,28 +1,89 @@
-Employee Management System (EMS)A modern, full-stack CRUD application developed for the technical assessment. This project demonstrates a clean separation of concerns using a Spring Boot REST API and a reactive React frontend.🌟 Key FeaturesDynamic Data Management: Full Create, Read, and Delete operations for employee records.State-Driven UI: Automatic table refreshing via React state hooks upon successful form submission.Custom Exception Handling: Centralized backend error mapping that returns structured JSON to the frontend.Modern Styling: Responsive "Bento" layout utilizing Tailwind CSS v4 and PostCSS.🛠️ Technical StackBackendFramework: Spring Boot 3.xLanguage: Java 17+Data Access: Spring Data JPADatabase: MySQLUtilities: Lombok, Maven WrapperFrontendLibrary: React.js (Vite)Styling: Tailwind CSS v4 + PostCSSHTTP Client: Fetch API (Async/Await)📂 Project Directory StructurePlaintextassessment-project/
-├── backend/                         # Spring Boot Application
+Employee Management System (EMS)
+
+A modern full-stack CRUD application built as part of a technical assessment. This project demonstrates clean architecture, separation of concerns, and seamless integration between a Spring Boot backend and a reactive React frontend.
+
+ Key Features
+Dynamic Data Management
+Perform full Create, Read, and Delete operations for employee records.
+State-Driven UI
+Automatic table updates using React state management after form submissions.
+Custom Exception Handling
+Centralized backend error handling that returns structured JSON responses.
+Modern UI Design
+Responsive "Bento-style" layout built with Tailwind CSS v4.
+ Tech Stack
+Backend
+Framework: Spring Boot 3.x
+Language: Java 17+
+Data Access: Spring Data JPA
+Database: MySQL
+Utilities: Lombok, Maven Wrapper
+Frontend
+Library: React (Vite)
+Styling: Tailwind CSS v4 + PostCSS
+HTTP Client: Fetch API (Async/Await)
+ Project Structure
+assessment-project/
+├── backend/                                 # Spring Boot Application
 │   ├── src/main/java/com/api/
-│   │   ├── controller/              # REST Endpoints (EmployeeController)
-│   │   ├── model/                   # JPA Entities (Employee)
-│   │   ├── repository/              # Data Access Layer
-│   │   └── exception/               # GlobalExceptionHandler
+│   │   ├── controller/                      # REST Controllers (EmployeeController)
+│   │   ├── service/                         # Business Logic Layer (Service Interfaces & Implementations)
+│   │   ├── model/                           # JPA Entities (Employee)
+│   │   ├── repository/                      # Data Access Layer (Spring Data JPA Repositories)
+│   │   └── exception/                       # Global Exception Handling
 │   ├── src/main/resources/
-│   │   └── application.properties   # DB Credentials & Hibernate Settings
-│   └── mvnw                         # Maven Wrapper Script
-├── frontend/                        # React Application
+│   │   └── application.properties           # Database Config & Hibernate Settings
+│   └── mvnw                                 # Maven Wrapper
+│
+├── frontend/                                # React Application
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── EmployeeForm.jsx     # Form Logic & POST integration
-│   │   │   └── EmployeeList.jsx     # Data Table & DELETE integration
-│   │   ├── App.jsx                  # Main Layout & State Coordination
-│   │   └── index.css                # Tailwind v4 Directives
-│   ├── tailwind.config.js           # Tailwind Content Scanning
-│   ├── postcss.config.js            # CSS Transformation Logic
-│   └── package.json                 # Dependencies (React, Vite, PostCSS)
-└── README.md                        # Project Documentation
- Setup & Installation1. Database ConfigurationEnsure MySQL is running.Create the database:SQLCREATE DATABASE assessment_db;
-Update backend/src/main/resources/application.properties with your MySQL username and password.2. Launch the BackendNavigate to the backend folder and run:PowerShell# Ensure JAVA_HOME is set to your JDK path
-$env:JAVA_HOME = "YOUR_JDK_PATH_HERE"
+│   │   │   ├── EmployeeForm.jsx             # Form Handling & POST Requests
+│   │   │   └── EmployeeList.jsx             # Data Table & DELETE Requests
+│   │   ├── App.jsx                          # Main Layout & State Management
+│   │   └── index.css                        # Tailwind CSS Directives
+│   ├── tailwind.config.js                   # Tailwind Configuration
+│   ├── postcss.config.js                    # PostCSS Configuration
+│   └── package.json                         # Project Dependencies
+│
+└── README.md                                # Project Documentation
+⚙️ Setup & Installation
+1. Database Setup
+
+Ensure MySQL is running, then create the database:
+
+CREATE DATABASE assessment_db;
+
+Update the database credentials in:
+
+backend/src/main/resources/application.properties
+2. Run the Backend
+
+Navigate to the backend folder:
+
+# Set your JDK path (Windows PowerShell)
+$env:JAVA_HOME="YOUR_JDK_PATH_HERE"
+
+# Run the application
 ./mvnw spring-boot:run
-3. Launch the FrontendNavigate to the frontend folder and run:PowerShellnpm install
+3. Run the Frontend
+
+Navigate to the frontend folder:
+
+npm install
 npm run dev
-Access the application at http://localhost:5173.📝 API EndpointsMethodEndpointDescriptionGET/api/employeesRetrieve all employeesPOST/api/employeesCreate a new employeeDELETE/api/employees/{id}Remove an employee by ID
+
+Access the app at:
+
+http://localhost:5173
+ API Endpoints
+Method	Endpoint	Description
+GET	/api/employees	Retrieve all employees
+POST	/api/employees	Create a new employee
+DELETE	/api/employees/{id}	Delete an employee by ID
+ Possible Improvements
+Add Update (PUT/PATCH) functionality
+Implement authentication & authorization (JWT)
+Add pagination & search
+Dockerize the application
+Deploy backend (e.g., Render) and frontend (e.g., Vercel)

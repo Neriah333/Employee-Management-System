@@ -79,11 +79,13 @@ Method	Endpoint	Description
 GET	/api/employees	Get all employees
 POST	/api/employees	Create employee
 DELETE	/api/employees/{id}	Delete employee
+
  Improvements
 Add update functionality (PUT/PATCH)
 Add authentication (JWT)
 Implement search & pagination
 Deploy (Render / Vercel)
+
 👤 Author
 
 Neriah Nn

@@ -1,89 +1,89 @@
 Employee Management System (EMS)
 
-A modern full-stack CRUD application built as part of a technical assessment. This project demonstrates clean architecture, separation of concerns, and seamless integration between a Spring Boot backend and a reactive React frontend.
+A full-stack CRUD application built with Spring Boot and React.
+This project demonstrates clean architecture, RESTful API design, and a responsive frontend.
 
- Key Features
-Dynamic Data Management
-Perform full Create, Read, and Delete operations for employee records.
-State-Driven UI
-Automatic table updates using React state management after form submissions.
-Custom Exception Handling
-Centralized backend error handling that returns structured JSON responses.
-Modern UI Design
-Responsive "Bento-style" layout built with Tailwind CSS v4.
- Tech Stack
+ Features
+Create, view, and delete employee records
+Real-time UI updates using React state
+Structured error handling on the backend
+Responsive UI with Tailwind CSS
+🛠 Tech Stack
+
 Backend
-Framework: Spring Boot 3.x
-Language: Java 17+
-Data Access: Spring Data JPA
-Database: MySQL
-Utilities: Lombok, Maven Wrapper
+
+Spring Boot
+Java 17+
+Spring Data JPA
+MySQL
+
 Frontend
-Library: React (Vite)
-Styling: Tailwind CSS v4 + PostCSS
-HTTP Client: Fetch API (Async/Await)
+
+React (Vite)
+Tailwind CSS v4
+PostCSS
+Fetch API
  Project Structure
 assessment-project/
-├── backend/                                 # Spring Boot Application
-│   ├── src/main/java/com/api/
-│   │   ├── controller/                      # REST Controllers (EmployeeController)
-│   │   ├── service/                         # Business Logic Layer (Service Interfaces & Implementations)
-│   │   ├── model/                           # JPA Entities (Employee)
-│   │   ├── repository/                      # Data Access Layer (Spring Data JPA Repositories)
-│   │   └── exception/                       # Global Exception Handling
-│   ├── src/main/resources/
-│   │   └── application.properties           # Database Config & Hibernate Settings
-│   └── mvnw                                 # Maven Wrapper
-│
-├── frontend/                                # React Application
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── EmployeeForm.jsx             # Form Handling & POST Requests
-│   │   │   └── EmployeeList.jsx             # Data Table & DELETE Requests
-│   │   ├── App.jsx                          # Main Layout & State Management
-│   │   └── index.css                        # Tailwind CSS Directives
-│   ├── tailwind.config.js                   # Tailwind Configuration
-│   ├── postcss.config.js                    # PostCSS Configuration
-│   └── package.json                         # Project Dependencies
-│
-└── README.md                                # Project Documentation
-⚙️ Setup & Installation
-1. Database Setup
 
-Ensure MySQL is running, then create the database:
+backend/
+  src/main/java/com/api/
+    controller/        # Handles HTTP requests
+    service/           # Business logic
+    model/             # JPA entities
+    repository/        # Database access
+    exception/         # Error handling
 
+  src/main/resources/
+    application.properties
+
+  mvnw
+
+frontend/
+  src/
+    components/
+      EmployeeForm.jsx
+      EmployeeList.jsx
+    App.jsx
+    index.css
+
+  tailwind.config.js
+  postcss.config.js
+  package.json
+
+README.md
+⚙️ Setup
+1. Database
 CREATE DATABASE assessment_db;
 
-Update the database credentials in:
+Update credentials in:
 
 backend/src/main/resources/application.properties
-2. Run the Backend
-
-Navigate to the backend folder:
-
-# Set your JDK path (Windows PowerShell)
-$env:JAVA_HOME="YOUR_JDK_PATH_HERE"
-
-# Run the application
+2. Backend
+cd backend
 ./mvnw spring-boot:run
-3. Run the Frontend
 
-Navigate to the frontend folder:
+Runs on:
+http://localhost:8080
 
+3. Frontend
+cd frontend
 npm install
 npm run dev
 
-Access the app at:
-
+Runs on:
 http://localhost:5173
- API Endpoints
+
+🔗 API
 Method	Endpoint	Description
-GET	/api/employees	Retrieve all employees
-POST	/api/employees	Create a new employee
-DELETE	/api/employees/{id}	Delete an employee by ID
- Possible Improvements
-Add Update (PUT/PATCH) functionality
-Implement authentication & authorization (JWT)
-Add pagination & search
-Dockerize the application
-Deploy backend (e.g., Render) and frontend (e.g., Vercel)
+GET	/api/employees	Get all employees
+POST	/api/employees	Create employee
+DELETE	/api/employees/{id}	Delete employee
+ Improvements
+Add update functionality (PUT/PATCH)
+Add authentication (JWT)
+Implement search & pagination
+Deploy (Render / Vercel)
+👤 Author
+
+Neriah Nn

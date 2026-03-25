@@ -2,11 +2,22 @@ import React, { useState } from 'react';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
 
-function App() {
+const App = () => {
   const [refreshKey, setRefreshKey] = useState(0);
+  const [editingEmployee, setEditingEmployee] = useState(null);
 
-  // Function to trigger a re-fetch in the List component
-  const handleRefresh = () => setRefreshKey(prev => prev + 1);
+  
+  const handleRefresh = () => {
+    setRefreshKey(prev => prev + 1);
+    setEditingEmployee(null); 
+  };
+
+  
+  const handleEdit = (employee) => {
+    setEditingEmployee(employee);
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
@@ -15,13 +26,27 @@ function App() {
           Employee Management System
         </h1>
         
-        <div className="space-y-10">
-          <EmployeeForm onEmployeeAdded={handleRefresh} />
-          <EmployeeList refreshKey={refreshKey} />
+        <div className="grid gap-8">
+          
+          <section>
+            <EmployeeForm 
+              onEmployeeAdded={handleRefresh} 
+              editingEmployee={editingEmployee} 
+            />
+          </section>
+
+          
+          <section>
+            <EmployeeList 
+              refreshKey={refreshKey} 
+              onEdit={handleEdit} 
+            />
+          </section>
         </div>
       </div>
     </div>
   );
-}
+};
+
 
 export default App;

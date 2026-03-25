@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "employees")
-@Data // This generates getters, setters, toString, etc. (Requires Lombok)
+@Data 
 public class Employee {
 
     @Id
